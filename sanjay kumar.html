@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skin AI Analyzer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@tailwindcss/browser@latest"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .active-link {
+            font-weight: 600;
+            color: #00b8d4;
+        }
+        .smooth-scroll {
+            scroll-behavior: smooth;
+        }
+        .report-section {
+            background-color: white;
+            border-radius: 0.5rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        .report-title {
+            color: #1e40af;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #e0f2fe;
+            padding-bottom: 0.5rem;
+        }
+        .report-section h3{
+            color: #15803d;
+            font-size: 1.25rem;
+            font-weight: 500;
+            margin-bottom: 0.75rem;
+        }
+        .report-section p {
+            color: #374151;
+            line-height: 1.75;
+            margin-bottom: 1rem;
+        }
+        .report-section ul{
+            list-style-type: disc;
+            padding-left: 2rem;
+            margin-bottom: 1rem;
+        }
+        .report-section li{
+             margin-bottom: 0.5rem;
+             color: #4b5563;
+        }
+
+    </style>
+</head>
+<body class="bg-gray-100 smooth-scroll">
+    <header class="bg-teal-500 fixed w-full top-0 z-50 shadow-md transition-colors duration-300" id="header">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="#" class="text-white text-xl font-semibold">Skin AI Analyzer</a>
+            <nav class="hidden md:block">
+                <ul class="flex space-x-6">
+                    <li><a href="#home" class="text-gray-200 hover:text-white transition-colors duration-300 active-link">Home</a></li>
+                    <li><a href="#analyzer" class="text-gray-200 hover:text-white transition-colors duration-300">Analyzer</a></li>
+                    <li><a href="#solutions" class="text-gray-200 hover:text-white transition-colors duration-300">Solutions</a></li>
+                    <li><a href="#about" class="text-gray-200 hover:text-white transition-colors duration-300">About</a></li>
+                    <li><a href="#contact" class="text-gray-200 hover:text-white transition-colors duration-300">Contact</a></li>
+                </ul>
+            </nav>
+            <button id="hamburger-btn" class="md:hidden text-white focus:outline-none" aria-label="Toggle Navigation">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+
+            </button>
+        </div>
+    </header>
+
+    <div id="mobile-menu" class="hidden fixed top-0 left-0 w-full h-full bg-gray-900 bg-opacity-90 z-50">
+        <div class="bg-gray-800 w-80 h-full absolute right-0 p-6">
+            <div class="flex justify-end mb-4">
+                <button id="close-menu-btn" class="text-white focus:outline-none" aria-label="Close Menu">
+                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            <nav class="block">
+                <ul class="space-y-4">
+                    <li><a href="#home" class="block text-gray-200 hover:text-white transition-colors duration-300 text-lg">Home</a></li>
+                    <li><a href="#analyzer" class="block text-gray-200 hover:text-white transition-colors duration-300 text-lg">Analyzer</a></li>
+                    <li><a href="#solutions" class="block text-gray-200 hover:text-white transition-colors duration-300 text-lg">Solutions</a></li>
+                    <li><a href="#about" class="block text-gray-200 hover:text-white transition-colors duration-300 text-lg">About</a></li>
+                    <li><a href="#contact" class="block text-gray-200 hover:text-white transition-colors duration-300">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <section id="home" class="bg-gradient-to-br from-teal-100 to-white py-20 md:py-32 text-center relative">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl md:text-6xl font-semibold text-teal-700 mb-4">Your Personal Skin AI Analyzer</h1>
+            <p class="text-lg md:text-xl text-gray-600 mb-8">Get personalized insights and solutions for your skin concerns.</p>
+            <a href="#analyzer" class="bg-teal-500 hover:bg-teal-600 text-white font-semibold py-3 px-6 rounded-full transition-colors duration-300 text-lg">Analyze Your Skin Now</a>
+        </div>
+    </section>
+
+    <section id="analyzer" class="bg-white py-20 md:py-32">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-semibold text-gray-800 text-center mb-12">Skin Condition Analyzer</h2>
+            <div class="bg-gray-50 rounded-lg shadow-md p-6 md:p-10 flex flex-col md:flex-row items-center gap-8">
+                <div class="md:w-1/2">
+                    <label for="text-input" class="block text-gray-700 text-sm font-bold mb-2">Describe your skin condition:</label>
+                    <textarea id="text-input" placeholder="Enter description here..." class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-48 resize-y mb-4"></textarea>
+                    <button id="analyze-button" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-full transition-colors duration-300 text-lg">Analyze</button>
+                </div>
+                <div class="md:w-1/2">
+                    <div id="analysis-results" class="bg-white rounded-lg shadow-sm p-6">
+                        <p class="text-gray-700">Analysis results will appear here...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="solutions" class="bg-teal-100 py-20 md:py-32">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-semibold text-teal-800 text-center mb-12">Personalized Solutions</h2>
+            <div id="solutions-content" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                </div>
+        </div>
+    </section>
+
+    <section id="about" class="bg-white py-20 md:py-32">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-semibold text-gray-800 text-center mb-12">About Me</h2>
+            <p class="text-lg text-gray-700 text-center">
+                Hello! I'm Sanjay Kumar Stalin, the creator of this Skin AI Analyzer.  As a student, I'm passionate about
+                leveraging technology to help people with their daily lives. This project is my attempt to use AI for personalized skincare.
+                I have designed this application to provide helpful insights and recommendations.
+            </p>
+        </div>
+    </section>
+
+    <section id="contact" class="bg-teal-100 py-20 md:py-32">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-semibold text-teal-800 text-center mb-12">Contact Me</h2>
+            <div class="bg-white rounded-lg shadow-md p-8 md:p-12 max-w-lg mx-auto text-center">
+                <p class="text-lg text-gray-700 mb-4">
+                    Feel free to reach out to me with any questions or feedback.
+                </p>
+                <p class="text-lg text-teal-600 font-semibold">
+                    Email: ss0877@srmist.edu.in <br>
+                    Phone: 7708119722 <br>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-800 text-white py-6">
+        <div class="container mx-auto px-4 text-center">
+        </div>
+    </footer>
+
+    <script>
+        const header = document.getElementById('header');
+        const navLinks = document.querySelectorAll('nav a');
+        const sections = document.querySelectorAll('section');
+        const mobileMenuBtn = document.getElementById('hamburger-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeMenuBtn = document.getElementById('close-menu-btn');
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        const contactForm = document.getElementById('contact-form');
+        const formResponse = document.getElementById('form-response');
+        const imageUpload = document.getElementById('image-upload');
+        const analyzeButton = document.getElementById('analyze-button');
+        const fileNameDisplay = document.getElementById('file-name');
+        const analysisResultsDiv = document.getElementById('analysis-results');
+        const solutionsContent = document.getElementById('solutions-content');
+
+        function updateActiveNavLink() {
+            let currentSectionId = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
+                if (window.scrollY >= sectionTop - sectionHeight / 3) {
+                    currentSectionId = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active-link');
+                if (link.getAttribute('href').slice(1) === currentSectionId) {
+                    link.classList.add('active-link');
+                }
+            });
+             mobileLinks.forEach(link => {
+                link.classList.remove('active-link');
+                if (link.getAttribute('href').slice(1) === currentSectionId) {
+                    link.classList.add('active-link');
+                }
+            });
+        }
+
+        function toggleMobileMenu() {
+            mobileMenu.classList.toggle('hidden');
+        }
+
+        window.addEventListener('scroll', () => {
+            updateActiveNavLink();
+            if (window.scrollY > 100) {
+                header.classList.add('bg-teal-600');
+            } else {
+                header.classList.remove('bg-teal-600');
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href').slice(1);
+                const targetSection = document.getElementById(targetId);
+                if (targetSection) {
+                    window.scrollTo({
+                        top: targetSection.offsetTop - header.offsetHeight,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href').slice(1);
+                const targetSection = document.getElementById(targetId);
+                 mobileMenu.classList.add('hidden');
+                if (targetSection) {
+                    window.scrollTo({
+                        top: targetSection.offsetTop - header.offsetHeight,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+        closeMenuBtn.addEventListener('click', toggleMobileMenu);
+
+        // Close menu when a mobile link is clicked
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Prevent default form submission and handle it with JS
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            // Basic validation
+            if (!name || !email || !message) {
+                formResponse.textContent = "Please fill in all fields.";
+                formResponse.style.color = "red";
+                return;
+            }
+
+            // Simulate sending data (replace with actual backend call)
+            formResponse.textContent = "Sending message...";
+            formResponse.style.color = "green";
+            setTimeout(() => {
+                formResponse.textContent = "Message sent successfully!";
+                formResponse.style.color = "green";
+                document.getElementById('name').value = '';
+                document.getElementById('email').value = '';
+                document.getElementById('message').value = '';
+                // Clear message after a few seconds
+                setTimeout(() => {
+                    formResponse.textContent = '';
+                }, 3000);
+            }, 2000);
+        });
+
+        imageUpload.addEventListener('change', (event) => {
+            if (event.target.files && event.target.files[0]) {
+                fileNameDisplay.textContent = `Selected File: ${event.target.files[0].name}`;
+            } else {
+                fileNameDisplay.textContent = '';
+            }
+        });
+
+        analyzeButton.addEventListener('click', () => {
+            // Placeholder for AI analysis logic
+            if (!imageUpload.files || !imageUpload.files[0]) {
+                analysisResultsDiv.textContent = "Please upload an image to analyze.";
+                analysisResultsDiv.style.color = "red";
+                return;
+            }
+
+            analysisResultsDiv.textContent = "Analyzing your skin... (AI integration needed)";
+            analysisResultsDiv.style.color = "green";
+            // In a real application, you would send the uploaded image to an AI model here
+            // and then display the results.
+             setTimeout(() => {
+                analysisResultsDiv.textContent = "Analysis complete! (Placeholder data)";
+                analysisResultsDiv.style.color = "green";
+            }, 2000);
+        });
+    </script>
+</body>
+</html>
